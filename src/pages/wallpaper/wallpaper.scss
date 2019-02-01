@@ -1,0 +1,53 @@
+page-wallpaper {
+    // --------------------------------------------------
+    
+    .wall_head .toolbar-title-ios {
+        font-size: 19px;
+        font-weight: 500;
+    }
+    .wall_head_icons {
+        padding: 0 5px 1px;
+        font-size: 25px;
+    }
+
+    // --------------------------------------------------
+    
+    .wall_img {
+        width: 95% !important;
+        margin: 0 2.5%;
+    }
+    
+    // --------------------------------------------------
+    
+    .wall_foot {
+        background: #ff7d01;
+        color: #fff;
+    }
+    .wall_foot_text1 {
+        padding: 10px 0;
+        color: #fff;
+        text-align: center;
+        border-right: 1px solid #fff;
+    }
+    .wall_foot_text2 {
+        padding: 10px 30px;
+        color: #fff;
+        text-align: center;
+        border-left: 1px solid #fff;
+    }
+    .wall_foot_text2 ion-icon {
+        float: left;
+        font-size: 22px;
+        margin: 8px 0;
+    }
+    .wall_foot_text1 h5 {
+        font-size: 17px;
+        font-weight: 400;
+        margin: 8px 0;
+    }
+    .wall_foot_text2 h5 {
+        font-size: 19px;
+        font-weight: 400;
+        margin: 8px 0;
+    }
+}

@@ -1,0 +1,31 @@
+<!--
+  Generated template for the TranslatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <ion-grid class="lang">
+    <ion-row>
+      <ion-col col-12>
+        <div class="lang_icon"> <img src="assets/imgs/logo.png"> </div>
+        <p class="lang_head"> Choose your App Language </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 (click)="setLanguage('1')">
+        <div [class]="seletcEnglish"> English </div>
+      </ion-col>
+      <ion-col col-6 (click)="setLanguage('2')">
+        <div [class]="selectHindi"> Hindi </div>
+      </ion-col>
+    </ion-row> 
+
+   
+    <ion-row>
+      <ion-col col-12 click="Skip()">
+        <div class="skip_box"> Skip </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

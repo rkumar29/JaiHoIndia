@@ -1,0 +1,40 @@
+page-terms {
+    .term_title {
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        margin-left: 20px;
+    }
+    .term_title:after {
+        content: " ";
+        display: block;
+        margin-top: 5px;
+        width: 20%;
+        height: 3px;
+        background: #ff7d01;
+    }
+    .term ul,
+    .term ol,
+    .term p {
+        margin: 7px 0;
+    }
+    .term_head {
+        text-transform: uppercase;
+    }
+    .term_subhead {
+        font-weight: 500;
+        text-transform: lowercase;
+    }
+    .term_point {
+        font-weight: 500;
+    }
+    .term_detail,
+    .term_detail li {
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #666;
+        letter-spacing: 1.0px;
+    }
+}

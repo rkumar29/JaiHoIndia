@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="background">
+
+  <form [formGroup]="formgroup">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label color="primary" floating> Email Id </ion-label>
+        <ion-input type="email" formControlName="email" value="duksha@gmail.com"></ion-input>
+      </ion-item> 
+
+      <ion-item *ngIf="email.hasError('required') && email.touched" no-lines>
+        <p>*Email is Required</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" floating> Password </ion-label>
+        <ion-input type="password" formControlName="password" value="Hello@123"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="password.hasError('required') && email.touched" no-lines>
+        <p>*Password is Required</p>
+      </ion-item>
+
+      <div class="forgot" (click)="forgotPage()"> Forgot Password? </div>
+
+      <button class="button button-block button-positive" (click)="login()" [disabled]="!formgroup.valid"> Log In </button>
+
+      <div class="">
+        <span> Don't have an account? </span>
+        <button class="button button-clear button-positive button-calm signupbutton " (click)="signUp()">
+          Sign Up </button>
+      </div>
+    </ion-list>
+
+  </form>
+
+  <ion-grid no-lines class="g-padd padd0">
+    <ion-row class="bg-3">
+      <ion-col col-6 class="text-center filter-head ">
+        <button ion-button icon-start class="col-50 facebook social-icon-facebook" (click)="loginWithFb()">
+          <ion-icon name="logo-facebook"></ion-icon> Facebook
+        </button>
+      </ion-col>
+      <ion-col col-6 class="text-center filter-head ">
+        <button ion-button icon-start class="col-50 google social-icon-google">
+          <ion-icon name="logo-google"></ion-icon> Google
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,78 @@
+page-horoscope {
+    // --------------------------------------------------
+    .sunsign_icon img {
+        border-radius: 50px;
+        max-width: 111%;
+        margin-left: -5px;
+    }
+    .sunsign {
+        color: #ff7d01;
+    }
+    .sunsign p {
+        margin: 2px 8px;
+    }
+    .sunsign_title {
+        font-weight: 500;
+    }
+    .sunsign_detail {
+        font-weight: 300;
+        font-size: 13px;
+    }
+    .sunsign_notification,
+    .sunsign_share {
+        font-size: 25px;
+        color: #aaa;
+    }
+    .sunsign_notification ion-icon,
+    .sunsign_share ion-icon {
+        margin: 0 7px;
+    }
+    
+    // --------------------------------------------------
+    .time_span {
+        width: 95%;
+        color: #ff7d01;
+        font-size: 14px;
+        padding: 7px 8px;
+        box-shadow: 0px 1px 0.2px #aaa;
+    }
+    .time_span:active {
+        background: #ff7d01;
+        color: #fff;
+    }
+    .time_span_prince {
+        width: 95%;
+        background: #ff7d01;
+        color: #fff;
+        font-size: 14px;
+        padding: 7px 8px;
+        box-shadow: 0px 1px 0.2px #aaa;
+    }
+
+    .sunsign_post {
+        text-align: right;
+        color: #aaa;
+    }
+    .sunsign_post_rating {
+        color: #ff7d01;
+        margin-left: 6px;
+    }
+
+    .ritual_video {
+        border: 1px solid #ff7d01;
+        border-radius: 7px;
+        color: #ff7d01;
+        padding: 5px 10px;
+        font-size: 13px;
+        box-shadow: 0px 1px 0.4px #bbb;
+    }
+
+    // --------------------------------------------------
+    
+    // .table_head ion-col {
+    //     background: #aaa;
+    //     color: #fff;
+    //     text-align: center;
+    //     border-left: 1px soild #fff;
+    // }
+}

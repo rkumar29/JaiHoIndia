@@ -1,0 +1,114 @@
+<!--
+  Generated template for the VideoplayerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <ion-grid class="padd0">
+    <div class="card">
+      <ion-item style="padding:0px;">
+        <div class="video-container" *ngIf="hideframe">
+          <!-- <iframe [src]="embeded_url" frameborder="0" width="100%" height="315"  allowfullscreen></iframe> -->
+           <!-- <iframe   width="100%" height="315" [src]="embeded_url" frameborder="0" allow="accelerometer; autoplay;  "
+            ></iframe> -->
+            <iframe width="100%" height="315" [src]="embeded_url"  frameborder="0" preload="metadata" autoplay="autoplay" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </ion-item>
+    </div>
+
+    <!-- Video Title -->
+    <ion-row class="vid_title">
+      <div col-9 class="padd0">
+        <h5>{{Vname}} </h5>
+      </div>
+      <div col-3 class="padd0">
+        <h4>{{Vduration}} </h4>
+      </div>
+    </ion-row>
+
+    <!-- Icon Row -->
+    <ion-row class="icon_row">
+      <div col-4>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <p class="icon_title"> Like </p>
+      </div>
+      <div col-4>
+        <ion-icon name="download"></ion-icon>
+        <p class="icon_title"> Download </p>
+      </div>
+      <div col-4>
+        <ion-icon name="share-alt"></ion-icon>
+        <p class="icon_title"> Share </p>
+      </div>
+    </ion-row>
+
+    <!-- Video Description -->
+    <ion-row class="vid_desc">
+      <div col-8>
+        <h5> {{cat_name}} </h5>
+      </div>
+      <div col-4 style="text-align: right;">
+        <ion-icon name="arrow-dropdown-circle"></ion-icon>
+      </div>
+      <p> {{description}} </p>
+    </ion-row>
+
+    <!-- Follow for more videos -->
+    <ion-row class="vid_follow">
+      <ion-col col-3>
+        <img src="{{cat_banner}}" src-fallback="assets/imgs/e_logo.png"> </ion-col>
+      <ion-col col-9>
+        <p> To get More Videos
+          <br> Please Follow </p>
+
+        <button class="cat_follow_active" *ngIf="isFollow ==1" (click)="changeFollow(isFollow)">
+          <ion-icon name="add"></ion-icon> Following </button>
+          
+          <button class="cat_follow" *ngIf="isFollow ==0" (click)="changeFollow(isFollow)">
+            <ion-icon name="add"></ion-icon> Following </button>
+
+
+      </ion-col>
+    </ion-row>
+
+    <!-- Recommended -->
+    <h5> Related Video </h5>
+    <ion-row class="rel_vid" *ngFor="let videosRelated of relatedVedioRES let i = index;" (click)="searchRelatedVedio(videosRelated)">
+      <ion-col col-4>
+        <img src="{{videosRelated.thumbnail}}" src-fallback="assets/imgs/logo.png"> </ion-col>
+      <ion-col col-8>
+        <h5> {{videosRelated.tittle}} </h5>
+        <p class="sub_title">{{videosRelated.tags}} </p>
+        <p class="vid_duration"> {{videosRelated.duration}}</p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid class="padd0">
+    <ion-row class="foot-fix">
+      <ion-col col-3 class="text-center foot-text" (click)="dashboard()">
+        <ion-icon name="home"></ion-icon>
+        <h5> Home </h5>
+      </ion-col>
+
+      <ion-col col-3 class="text-center foot-text" (click)="download()">
+        <ion-icon name="download"></ion-icon>
+        <h5> Download </h5>
+      </ion-col>
+
+      <ion-col col-3 class="text-center foot-text" (click)="settings()">
+        <ion-icon name="settings"></ion-icon>
+        <h5> Settings </h5>
+      </ion-col>
+
+      <ion-col col-3 class="text-center foot-text" (click)="profile()">
+        <ion-icon name="person"></ion-icon>
+        <h5> Profile </h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

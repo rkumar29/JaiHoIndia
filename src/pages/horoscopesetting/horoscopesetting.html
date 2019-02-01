@@ -1,0 +1,44 @@
+<!--
+  Generated template for the HoroscopeSettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-1 (click)="horoscope()">
+        <ion-icon name="arrow-back" class="header_icon1"></ion-icon>
+      </ion-col>
+      <ion-col col-11 class="text-center header_icons">
+        <ion-title> Horoscope Settings </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid class="padd0">
+    <ion-row>
+      <h5 class="sunsign_head"> Choose Your Sunsign </h5>
+    </ion-row>
+    <ion-row>
+      <span col-4 class="padd0" *ngFor="let zodic of zodicSign; let i = index">
+        <ion-col (click)="selectHoro(zodic)">
+          <button class="sunsign_card">
+            <img src="http://bailiwickstudioz.com/jaihoindia/images/{{zodic.zodiac_banner}}" class="sunsign_icon">
+            <p class="sunsign_title"> {{zodic.zodiac_sign_name}} </p>
+            <p class="sunsign_detail"> {{zodic.sign_for_date}} </p>
+          </button>
+        </ion-col> 
+      </span>
+
+
+
+    </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,55 @@
+<!--
+  Generated template for the WallpaperPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+      <ion-row>
+        <ion-col col-1 class="header_icons" (click)="goBack()">
+          <ion-icon name="arrow-back" class="wall_head_icons"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <ion-title class="wall_head"> Wallpaper Heading </ion-title>
+        </ion-col>
+        <ion-col col-1 class="header_icons">
+          <ion-icon name="download" class="wall_head_icons"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-slides>
+      <span *ngFor = "let wall of relatedVedioRES">
+      <ion-slide class="wall_img">
+        <img src="{{BASE_URL}}{{wall.url}}" src-fallback="assets/imgs/e_logo.png">
+      </ion-slide>
+    </span>
+      <!-- <ion-slide class="wall_img">
+        <img src="assets/imgs/background2.jpg" src-fallback="assets/imgs/e_logo.png">
+      </ion-slide>
+      <ion-slide class="wall_img">
+        <img src="assets/imgs/background1.jpg" src-fallback="assets/imgs/e_logo.png">
+      </ion-slide>
+      <ion-slide class="wall_img">
+        <img src="assets/imgs/background2.jpg" src-fallback="assets/imgs/e_logo.png">
+      </ion-slide> -->
+    </ion-slides>
+  </ion-content> 
+  
+  <ion-footer>
+    <ion-grid class="padd0">
+      <ion-row class="wall_foot"> 
+        <ion-col col-6 class="wall_foot_text1" (click)="setwallpaper(wall_content)">
+          <h5> Set as Wallpaper </h5>
+        </ion-col>
+        <ion-col col-6 class="wall_foot_text2" (click)="profile()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          <h5> Share </h5>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>
+  

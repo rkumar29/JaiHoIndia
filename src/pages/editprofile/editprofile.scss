@@ -1,0 +1,81 @@
+page-editprofile {
+  .mar_auto {
+      margin: auto
+  }
+  .bg-3 {
+      background: #f8f8f8;
+  }
+  
+  .pro-pic {
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      border-radius: 50px;
+      box-shadow: 1px 2px 1px #b3b3b3;
+  }
+
+  .user_name h5 {
+      font-weight: 600;
+      font-size: 15px;
+      margin-top: 2px !important;
+  }
+  .user_id p {
+      color: #9f9f9f;
+      margin-top: -5px;
+      font-weight: 500;
+  }
+
+  .profile span {
+      padding: 10px;
+      margin: 5px 0;
+      background: #f00;
+      color: #fff;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 5px;
+      text-align: center;
+  }
+
+  .log_sign {
+      text-align: center;
+      color: #333;
+      font-size: 17px;
+      margin: 5px 0;
+  }
+  .other_list {
+      font-size: 17px;
+      margin: 10px 0;
+  }
+  .other_list ion-icon {
+      color: #ff7d00;
+      font-weight: 600;
+      font-size: 1em;
+  }
+  .other_list [col-11] {
+      border-bottom: 1px solid #ccc;
+  }
+  .other_list_last [col-11] {
+      border-bottom: none;
+  }
+  .other_list p {
+      color: #5a5a5a;
+      font-size: 17px;
+      margin-left: 10px;
+  }
+
+  .log_out {
+      font-size: 17px;
+      margin: 10px;
+  }
+  .log_out ion-icon {
+      color: #ff7d00;
+      font-weight: 600;
+      font-size: 1.2em;
+  }
+  .log_out p {
+      color: #5a5a5a;
+      font-size: 17px;
+      margin-left: 10px;
+  }
+}

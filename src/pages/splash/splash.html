@@ -1,0 +1,50 @@
+<!--
+  Generated template for the SplashPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>splash</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding overflow-scroll="true">
+<ion-grid>
+
+  <div class="card">
+    <ion-item>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/wyVM1evRxNw" frameborder="0" width="100%" height="315"></iframe>
+        </div>
+    </ion-item>
+</div>
+
+  <ion-row >
+  <!-- <video controls="controls"style="width: 100%;height: 200px;" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+    <source src="http://bailiwicksolution.com/jaihoindia/videos/abc.mp4" type="video/mp4" />
+  </video> -->
+
+  <!-- <ion-content overflow-scroll="true">
+    <video controls="controls"  style="width: 100%;height: 200px;" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+     <source src="./assets/videos/Part_1.mp4" type="video/mp4" />
+    </video>
+  </ion-content> -->
+</ion-row>
+
+<ion-row>
+  <button ion-button color="secondary" style="margin-top: 50px" (click)="Playvedio()">Play Vedio</button>
+
+  <button ion-button color="secondary" style="margin-top: 50px" (click)="vedioWithplayer()">Player</button>
+
+  <button ion-button color="secondary" style="margin-top: 50px" (click)="onMyhit()">GET Data</button>
+
+  <button ion-button color="secondary" style="margin-top: 50px" (click)="goToDashboard()">dashboard</button>
+</ion-row>
+</ion-grid>
+
+</ion-content>

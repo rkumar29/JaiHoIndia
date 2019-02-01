@@ -1,0 +1,34 @@
+page-horoscopesetting {
+
+    .header_icon1 {
+        padding: 0 3px 1px;
+    }
+    .sunsign_head {
+        color: #ff7d01;
+        margin-top: 1rem !important;
+        font-weight: 400;
+    }
+    .sunsign_card {
+        border-radius: 0px;
+        box-shadow: 0.5px 0.5px 1px #bdb;
+        padding: 8px 0 0 0;
+        border: 0.5px solid #ff7d01;
+    }
+    .sunsign_icon {
+        border-radius: 50px;
+        width: 40%;
+        margin: 8px 0;
+    }
+    .sunsign_card p {
+        margin: 7px;
+    }
+    .sunsign_title {
+        font-weight: 500;
+        font-size: 13px;
+    }
+    .sunsign_detail {
+        font-weight: 300;
+        font-size: 10px;
+    }
+
+}

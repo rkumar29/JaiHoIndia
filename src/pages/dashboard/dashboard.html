@@ -1,0 +1,203 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+
+
+    <ion-row>
+      <ion-col col-9>
+        <!-- <ion-icon name="arrow-back" class="header_icon1"></ion-icon> -->
+        <ion-title>
+          <img src="assets/imgs/logo-extended.jpg" class="logo-ex"> </ion-title>
+      </ion-col>
+      <ion-col col-3 class="header_icons">
+        <ion-icon name="funnel" class="header_icon2"></ion-icon>
+        <ion-icon name="notifications"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <ion-row>
+    <ion-searchbar [(ngModel)]="myInput" (ionChange)="onInput($event)"></ion-searchbar>
+  </ion-row>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid class="padd0">
+    <!-- Following Main -->
+    <ion-row *ngIf="isfollower">
+      <ion-grid class="padd0">
+        <ion-row class="scroll-head">
+          <ion-col col-12>
+            <h5 class="">{{total_follow}}</h5>
+          </ion-col>
+          
+        </ion-row>
+      </ion-grid>
+      <ion-scroll scrollX="true" class="cat-scroll">
+        <div class="slide-box">
+          <div class="block-vec" *ngFor="let follow of following_RES " (click)="following(follow)">
+            <img src="http://bailiwickstudioz.com/jaihoindia/images/{{follow.cat_banner}}" src-fallback="assets/imgs/e_logo.png">
+            <p> {{follow.cat_name}} </p>
+          </div>
+
+
+        </div>
+      </ion-scroll>
+    </ion-row>
+    <!-- Following END -->
+
+   <!-- watched list -->
+   <ion-row *ngIf="isRecent" >
+    <ion-grid class="padd0">
+      <ion-row class="scroll-head">
+        <ion-col col-8>
+          <h5 class="">Recentely Watched </h5>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+    <ion-scroll scrollX="true" class="cat-scroll">
+      <div class="slide-box">
+        <div class="wall_block" *ngFor="let watch of watched_list" (click)="watchHit(watch)">
+          <img src="{{watch.thumbnail}}" src-fallback="assets/imgs/e_logo.png">
+          <p> {{watch.tittle}} </p>
+        </div>
+
+
+      </div>
+    </ion-scroll>
+  </ion-row>
+
+  <!-- END  watched list -->
+
+    <ion-row>
+      <ion-slides *ngIf="banner && banner.length" autoplay="5000" class="image-slider" pager effect="coverflow" autoplay="3000"
+        loop="true" speed="3000" autoplayDisableOnInteraction="false">
+
+        <span *ngFor="let ban of banner" (click)="banner_click(ban)">
+          <ion-slide>
+            <img src="http://bailiwickstudioz.com/jaihoindia/images/{{ban.url}}">
+          </ion-slide>
+
+        </span>
+
+
+      </ion-slides>
+    </ion-row>
+
+    <ion-row class="topics">
+      <ion-col col-6 (click)="openHoroscope()">
+        <div class="topic horoscope">
+          <ion-icon name="sunny"></ion-icon>
+          <h5> Horoscope </h5>
+        </div>
+      </ion-col>
+
+      <ion-col col-6>
+        <div class="topic wallpaper">
+          <ion-icon name="images" (click)="democlick()"></ion-icon>
+          <h5> Wallpaper </h5>
+        </div>
+      </ion-col>
+
+      <ion-col col-6>
+        <div class="topic panchang">
+          <ion-icon name="calendar" (click)="openPujaPage()"></ion-icon>
+          <h5> Panchang </h5>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 (click)="openTemple()">
+        <div class="topic temples">
+          <ion-icon name="home"></ion-icon>
+          <h5> Temples </h5>
+        </div>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row *ngFor="let category of catagory let i = index;">
+      <ion-grid class="padd0">
+        <ion-row class="scroll-head">
+          <ion-col col-8>
+            <h5 class=""> {{catagory[i].cat_name}}</h5>
+          </ion-col>
+          <ion-col col-4 (click)="GetSubCatList(category)">
+            <button class="seeallbutton">
+              <h5 class=""> See All </h5>
+              <ion-icon name="arrow-dropright"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-scroll scrollX="true" class="cat-scroll">
+        <div class="slide-box">
+          <div class="block-vec" *ngFor="let sub_cat of catagory[i].child_cat" (click)="openSubcat(sub_cat)">
+            <img src="http://bailiwickstudioz.com/jaihoindia/images/{{sub_cat.cat_banner}}" src-fallback="assets/imgs/e_logo.png">
+            <p> {{sub_cat.cat_name}} </p>
+          </div>
+
+
+        </div>
+      </ion-scroll>
+    </ion-row>
+
+
+
+    <!-- watched list -->
+   <ion-row  >
+    <ion-grid class="padd0">
+      <ion-row class="scroll-head"  > 
+        <ion-col col-8 >
+          <h5 class="">wallpaper</h5>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+    <ion-scroll scrollX="true" class="cat-scroll">
+      <div class="slide-box">
+        <div class="wall_block" *ngFor="let wallpaper of wallpaper_list" (click)="wallpaperHit(wallpaper)">
+          <img src="http://bailiwickstudioz.com/jaihoindia/images/{{wallpaper.cat_banner}}" src-fallback="assets/imgs/e_logo.png">
+          <p> {{wallpaper.category}} </p>
+        </div>
+
+
+      </div>
+    </ion-scroll>
+  </ion-row>
+
+  <!-- END  watched list -->
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-grid class="padd0">
+    <ion-row class="foot-fix">
+      <ion-col col-3 class="text-center active foot-text" (click)="dashboard()">
+        <ion-icon name="home"></ion-icon>
+        <h5> Home </h5>
+      </ion-col>
+
+      <ion-col col-3 class="text-center foot-text" (click)="download()">
+        <ion-icon name="download"></ion-icon>
+        <h5> Download </h5>
+      </ion-col>
+
+      <ion-col col-3 class="text-center foot-text" (click)="settings()">
+        <ion-icon name="settings"></ion-icon>
+        <h5> Settings </h5>
+      </ion-col>
+
+      <ion-col col-3 class="text-center foot-text" (click)="profile()">
+        <ion-icon name="person"></ion-icon>
+        <h5> Profile </h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -1,0 +1,161 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+ion-app.ios {
+    font-family: -apple-system, "Roboto", sans-serif;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.padd10 {
+    padding: 10px;
+}
+.item-ios {
+    background: transparent;
+}
+
+// --------------------------------------------------
+
+.logo {
+    max-width: 45px;
+    margin-top: -6px;
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+// .logo {
+//     max-width: 45px;
+//     margin-top: -6px;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+// }
+
+.logo-ex {
+    max-width: 90px;
+    margin-top: -6px;
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+.header_icons {
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 0 !important;
+}
+.header_icon1 {
+    color:#fff;
+    font-size: 25px;
+    top: 5px;
+    left: 5px;
+    padding: 0 10px 1px;
+    text-align: left;
+}
+.header_icon2 {
+    padding: 4px 30px 0 0;
+}
+.toolbar-ios ion-title {
+    padding:  0 32px 0;
+}
+
+// --------------------------------------------------
+
+.toolbar-background-md,
+.toolbar-background-ios {
+    background: #ff7d00;
+    color: #fff;
+}
+.toolbar-title-ios {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    pointer-events: auto;
+}
+.background {
+    background: url('../assets/imgs/background.jpg') no-repeat left top;
+    width: 100%;
+    color: #fff;
+}
+.padd0 {
+    padding: 0px;
+}
+
+button {
+    background: none;
+}
+
+// --------------------------------------------------
+
+.searchbar-input input {
+    margin: 0 0px !important;
+}
+.searchbar-ios .searchbar-input {
+    background-color: #fdfbfa;
+    margin: 0px;
+    color: #f2f2f2;
+    box-shadow: 1px 1px 2px #888888;
+}
+.searchbar-ios {
+    background: transparent;
+    border-bottom: none;
+}
+
+// --------------------------------------------------
+
+.foot-text {
+    padding: 4px;
+    background: #f2f2f2;
+    color: #aaa;
+    border-top: 0px solid #ff7d00;
+    text-align: center;
+}
+.foot-text.active {
+    background: #fff;
+    color: #ff7d00;
+    border-top: 2px solid #ff7d00;
+}
+.foot-text h5 {
+    font-size: 14px;
+    margin: 8px 0;
+}
+.foot-text ion-icon {
+    font-size: 2em;
+}
+
+// --------------------------------------------------
+
+label {
+    margin: 4px 0;
+}
+
+label > div {
+    padding-top: 3px;
+    margin: 0 10px;
+}
+
+input {
+    padding: 4px;
+    margin: 0 15px;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    background: none;
+}

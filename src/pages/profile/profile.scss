@@ -1,0 +1,49 @@
+page-profile {
+    
+    // --------------------------------------------------
+    
+    .item-ios {
+        padding-left: 1px;
+    }
+    .profile-bx {
+        border-radius: 4px 4px 0px 0px;
+        margin-top: 50px;
+    }
+    .item-ios {
+        color: #ff7d01;
+        font-size: 15px;
+        background-color: transparent;
+    }
+    .item-ios.item-block .item-inner {
+        padding-right: 1px;
+        border-bottom: 0.55px solid #ff7d01;
+    }
+    .dropdown {
+        padding-top: 20px;
+    }
+
+    .pro-pic{
+        margin: auto;
+        display: block;
+        margin-top: -45px;
+        border-radius: 50%;
+        padding: 1px;
+        border:0.1em solid #fff;
+        width:80px;
+        height:80px;
+        align-items: center;
+        background-size: cover; 
+        justify-content: center
+    }
+
+    .update-profile{
+        justify-content: center;
+        margin: auto;
+        padding: 16px 20px;
+        background: #ff7d01;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}

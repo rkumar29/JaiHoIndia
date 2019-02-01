@@ -1,0 +1,40 @@
+page-privacypolicy {
+    .policy_title {
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        margin-left: 20px;
+    }
+    .policy_title:after {
+        content: " ";
+        display: block;
+        margin-top: 5px;
+        width: 20%;
+        height: 3px;
+        background: #ff7d01;
+    }
+    .policy ul,
+    .policy ol,
+    .policy p {
+        margin: 7px 0;
+    }
+    .policy_head {
+        text-transform: uppercase;
+    }
+    .policy_subhead {
+        font-weight: 500;
+        text-transform: lowercase;
+    }
+    .policy_point {
+        font-weight: 500;
+    }
+    .policy_detail,
+    .policy_detail li {
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #666;
+        letter-spacing: 1.0px;
+    }
+}

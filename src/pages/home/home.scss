@@ -1,0 +1,16 @@
+page-home {
+    .background {
+        background: url('../assets/imgs/background.jpg') no-repeat left top;
+        width: 100%;
+    }
+    .background img {
+        position: relative;
+        top: 20%;
+    }
+    .splash {
+        position: absolute;
+        top: 45%;
+        left: 38%;
+        color: #fff;
+    }
+}

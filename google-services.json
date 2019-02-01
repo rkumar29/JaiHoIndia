@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "198091073257",
+    "firebase_url": "https://jai-ho-658f6.firebaseio.com",
+    "project_id": "jai-ho-658f6",
+    "storage_bucket": "jai-ho-658f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198091073257:android:3407687ca4282b07",
+        "android_client_info": {
+          "package_name": "com.bailiwick.jaiho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198091073257-137upiil60bffh6am67iuc5qj254a1i7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvM8kucAbbYsjfOt8jff1GHyy33bS8zx8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

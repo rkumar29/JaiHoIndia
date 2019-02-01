@@ -1,0 +1,183 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> Profile </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid no-lines>
+    <ion-row class="bg-3 profile-bx">
+      <img class="pro-pic" src="{{profile_pic}}" click="changeProfilePicture(profile_pic)">
+    </ion-row>
+    <form [formGroup]="profileForm">
+      <ion-row>
+        <ion-item>
+          <ion-label floating> Name </ion-label>
+          <ion-input type="text" formControlName="full_name" value="{{name}}"> </ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item *ngIf="full_name.hasError('required') && full_name.touched" no-lines>
+          <p>*Name is Required</p>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label floating> Email Id </ion-label>
+          <ion-input type="email" formControlName="email_id" value="{{emailId}}"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+          <ion-item *ngIf="email_id.hasError('required') && email_id.touched" no-lines>
+            <p>*Email is Required</p>
+          </ion-item>
+        </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label floating> Mobile </ion-label>
+          <ion-input type="number" formControlName="mobile_no" value="{{mobile}}"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+          <ion-item *ngIf="mobile_no.hasError('required') && mobile_no.touched" no-lines>
+            <p>*Mobile No is Required</p>
+          </ion-item>
+        </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label floating> Date of Birth </ion-label>
+          <ion-input type="text" formControlName="dob" value="{{dateOfBirth}}"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+          <ion-item *ngIf="dob.hasError('required') && dob.touched" no-lines>
+            <p>*DOB is Required</p>
+          </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label floating> Address Line 1 </ion-label>
+          <ion-input type="text" formControlName="address_line_1" value="{{address_line1}}"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+          <ion-item *ngIf="address_line_1.hasError('required') && address_line_1.touched" no-lines>
+            <p>*Address Line 1 is Required</p>
+          </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label floating> Address Line 2 </ion-label>
+          <ion-input type="text" formControlName="address_line_2" value="{{address_line2}}"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+          <ion-item *ngIf="address_line_2.hasError('required') && address_line_2.touched" no-lines>
+            <p>*Address Line 2 is Required</p>
+          </ion-item>
+      </ion-row>
+
+      <ion-row class="dropdown">
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select formControlName="selected_gender"  (ionChange)="options($event)">
+            <ion-option *ngFor="let g of gender" value="{{g}}" [selected]="option1 == g">{{g}}</ion-option>
+            <!-- <ion-option value="m">Male</ion-option> -->
+          </ion-select>
+        </ion-item>
+      </ion-row>
+
+      <ion-row class="dropdown">
+
+          <ion-item col-6>
+              <ion-label> Country </ion-label>
+              <ion-select formControlName="selected_country" (ionChange)="countrySelect($event)">
+                <ion-option *ngFor="let cont of country" value="{{cont.name}}" (ionSelect)="getCountryId(cont.id)" [selected]="selected_country == cont.name">{{cont.name}}</ion-option>
+              </ion-select>
+            </ion-item>
+
+        <ion-item col-6>
+          <ion-label> State </ion-label>
+          <ion-select formControlName="selected_state" (ionChange)="stateSelect($event)">
+            <ion-option *ngFor="let s of state" value="{{s.state_name}}" (ionSelect)="getStateId(s.state_id)" [selected]="selected_state == s.state_name">{{s.state_name}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item col-6>
+          <ion-label> City </ion-label>
+          <ion-select formControlName="selected_city" (ionChange)="citySelect($event)">
+            <ion-option *ngFor="let c of city" value="{{c.city_name}}" (ionSelect)="getCityId(c.city_id)" [selected]="selected_city == c">{{c.city_name}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+          <ion-list radio-group no-lines formControlName="calendar_type"  (ionChange)="calendarSelect($event)">
+            <ion-list-header>
+              Calendar Month Type
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Default</ion-label>
+              <ion-radio value="Default"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Amavasyant</ion-label>
+              <ion-radio value="Amavasyant"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Purnimant</ion-label>
+              <ion-radio value="Purnimant"></ion-radio>
+            </ion-item>
+  
+          </ion-list>
+        </ion-row>
+        <ion-row>
+          <ion-list radio-group no-lines formControlName="religion" (ionChange)="religionSelect($event)">
+            <ion-list-header>
+              Religion
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Hindu</ion-label>
+              <ion-radio value="hindu"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Buddhism</ion-label>
+              <ion-radio value="buddhism"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Sikh</ion-label>
+              <ion-radio value="sikh"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Jain</ion-label>
+              <ion-radio value="jain"></ion-radio>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+      <ion-row col-12 text-center>
+        <button (click)="updateProfile()" class="update-profile" [disabled]="!profileForm.valid"> Update Profile </button>
+      </ion-row>
+
+    </form>
+
+  </ion-grid>
+
+</ion-content>

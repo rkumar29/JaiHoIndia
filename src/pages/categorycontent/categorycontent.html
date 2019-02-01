@@ -1,0 +1,204 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-9>
+        <!-- <ion-icon name="arrow-back" class="header_icon1"></ion-icon> -->
+        <ion-title> <img src="assets/imgs/logo.png" class="logo"> </ion-title>
+      </ion-col>
+      <ion-col col-3 class="header_icons">
+          <ion-icon name="share-alt" class="header_icon2" (click)="shareContent()"></ion-icon>
+          <ion-icon name="search"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <!-- <ion-row>
+    <ion-searchbar [(ngModel)]="myInput" (ionChange)="onInput($event)"></ion-searchbar>
+  </ion-row>   -->
+</ion-header>
+
+<ion-content>
+    
+  <!-- Slider -->
+  <ion-row>
+    <ion-slides *ngIf="banner && banner.length" class="image-slider" pager effect="coverflow"  autoplay="3000" loop="true" speed="3000"  autoplayDisableOnInteraction="false">
+        <span *ngFor = "let ban of banner">
+        <ion-slide (click)="openNextPage(ban)">    
+          <img src="{{ban.thumbnail}}" >
+        </ion-slide>
+      </span>
+       <!--  <ion-slide>
+          <img src="assets/imgs/B03.jpg" >
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/imgs/B04.jpg" >
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/imgs/B05.jpg" >
+        </ion-slide> -->
+    </ion-slides>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-8><h5 class="cat_head"> {{guruName}} </h5></ion-col>
+    <ion-col col-4>
+      <button class="cat_follow_active" *ngIf="isFollow ==1" (click)="changeFollow(isFollow)">
+        <ion-icon name="add"></ion-icon> Following </button>
+        
+        <button class="cat_follow" *ngIf="isFollow ==0" (click)="changeFollow(isFollow)">
+          <ion-icon name="add"></ion-icon> Following </button>
+
+    
+    </ion-col>
+  </ion-row>
+
+  <div [ngClass]="default_css">
+    <p col-12> {{guruDescription}} </p>
+    <div class="social_box">
+      <a class="social_btn fb" href="javascript:void(0);" (click)="openFbPosts()"><ion-icon name="logo-facebook"></ion-icon></a>
+      <a class="social_btn tw" href="javascript:void(0);" (click)="openTwitterPosts()"><ion-icon name="logo-twitter"></ion-icon></a>
+    </div>
+    <ion-icon *ngIf="!more"name="arrow-dropdown-circle" (click)="showMore()"></ion-icon>
+    <ion-icon *ngIf="more" name="arrow-dropup-circle" (click)="hideMore()"></ion-icon>
+  </div>
+
+  <!-- <script>
+    $(document).ready(function(){
+      $("ion-icon.cat_details").click(function(){
+        $("p.cat_details").toggle();
+      });
+    });
+  </script> -->
+      
+
+  <!-- Bhajan & Chalisa -->
+ 
+
+  <ion-row *ngFor="let vid of video">
+    <ion-grid class="padd0">
+        <ion-row class="scroll-head">
+          <ion-col col-12>
+            <h5 class=""> {{vid.video_type}} </h5>
+          </ion-col>
+        </ion-row> 
+    </ion-grid>
+    <ion-grid>
+      <ion-scroll scrollX="true" class="cat-scroll">
+          <div class="slide-box">
+            <span *ngFor="let v of vid.video_content">
+              <button (click)="videoplayer(v)" class="block-vec">
+                <img src="{{v.thumbnail}}" src-fallback="assets/imgs/e_logo.png">
+                <p> {{v.tittle}} </p>
+
+              </button>
+            </span>
+          </div>
+      </ion-scroll>
+    </ion-grid>
+  </ion-row>
+
+   <!-- Audio -->
+  <ion-row *ngFor="let aud of audio">
+    <ion-grid class="padd0">
+        <ion-row class="scroll-head">
+          <ion-col col-12>
+            <h5 class=""> {{aud.audio_type}} </h5>
+          </ion-col>
+        </ion-row> 
+    </ion-grid>
+    <ion-grid>
+      <ion-scroll scrollX="true" class="cat-scroll">
+          <div class="slide-box" >
+            <span *ngFor="let a of aud.audio_content">
+              <button (click)="audioplayer(a)" class="block-vec">
+                <img src="assets/imgs/e-logo.png" src-fallback="assets/imgs/e_logo.png">
+                <p> {{a.tittle}} </p>
+              </button>
+            </span>
+          </div>
+      </ion-scroll>
+    </ion-grid>
+  </ion-row>
+ <!--  <ion-row *ngFor="let vid of video">
+    <ion-grid class="padd0">
+        <ion-row class="scroll-head">
+          <ion-col col-12>
+            <h5 class=""> {{vid.video_type}} </h5>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-scroll scrollX="true" class="cat-scroll">
+          <div class="slide-box" *ngFor="let v of vid.video_content">
+              <button (click)="videoplayer(a)" class="block-vec">
+                <img src="assets/imgs/e-logo.png" src-fallback="assets/imgs/e_logo.png">
+                <p> {{v.tittle}} </p>
+              </button>
+          </div>
+      </ion-scroll>
+    </ion-grid>
+  </ion-row>
+ -->
+  <ion-row *ngIf="isLoad">
+    <ion-grid class="padd0">
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="images"></ion-icon>
+        </ion-col>
+        <ion-col col-11>
+              <h5 style="margin-top: 0rem"> Wallpapers </h5>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="padd0" *ngFor="let wall of wallpaper">
+      <ion-scroll scrollX="true" class="cat-scroll">
+        <div class="slide-box"> 
+          <button class="wall_block" (click)="openWallpaper(wall)">
+            <img src="{{BASE_URL_IMAGE}}{{wall.url}}" src-fallback="assets/imgs/e_logo.png">
+          </button>
+         <!--  <button class="wall_block">
+            <img src="assets/imgs/background.jpg" src-fallback="assets/imgs/e_logo.png">
+          </button>
+          <button class="wall_block">
+            <img src="assets/imgs/background.jpg" src-fallback="assets/imgs/e_logo.png">
+          </button>
+          <button class="wall_block">
+            <img src="assets/imgs/background.jpg" src-fallback="assets/imgs/e_logo.png">
+          </button>
+          <button class="wall_block">
+            <img src="assets/imgs/background.jpg" src-fallback="assets/imgs/e_logo.png">
+          </button>
+          <button class="wall_block">
+            <img src="assets/imgs/background.jpg" src-fallback="assets/imgs/e_logo.png">
+          </button> -->
+        </div>
+      </ion-scroll>
+    </ion-grid>
+  </ion-row>
+        
+</ion-content>
+
+<ion-footer>
+  <ion-grid class="padd0">
+      <ion-row class="foot-fix"> 
+          <ion-col col-3 class="text-center foot-text" (click)="dashboard()">
+            <ion-icon name="home"></ion-icon>
+            <h5> Home </h5>
+          </ion-col>
+
+          <ion-col col-3 class="text-center foot-text" (click)="download()">
+            <ion-icon name="download"></ion-icon>
+            <h5> Download </h5>
+          </ion-col>
+
+          <ion-col col-3 class="text-center foot-text" (click)="settings()">
+            <ion-icon name="settings"></ion-icon>
+            <h5> Settings </h5>
+          </ion-col>
+          
+          <ion-col col-3 class="text-center foot-text" (click)="profile()">
+            <ion-icon name="person"></ion-icon>
+            <h5> Profile </h5>
+          </ion-col>
+      </ion-row>
+      </ion-grid>
+</ion-footer>

@@ -1,0 +1,74 @@
+page-rate {
+    .main-view {
+      background: transparent;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: .5;
+      background: url('../assets/imgs/background.jpg') no-repeat left top;
+
+    }
+    .modal_content {
+      position: absolute;
+      top: calc(50% - (50%/2));
+      left: 0;
+      right: 0;
+      width: 85%;
+      z-index: 1;
+      margin: 0 auto;
+      color: #000;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 3px rgba(51, 51, 51, .35);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .content {
+      float:center;
+      text-align: center;
+    }
+    .content h1 {
+      font-size: 1.2em;
+      text-align: center;
+    }
+    .card {
+      width: 100px;
+      border-radius: 50px;
+      margin: auto;
+    }
+    .btn-1 {
+      width: 100%;
+      color: #ff7d00;
+    }
+    .btn-1 h5 {
+      margin: 12px 0;
+      margin-left: 25px;
+      font-size: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .btn-2 {
+      width: 100%;
+      font-size: 1em;
+      background-color:#ff7d00;
+      color: #fff;
+      margin-top: 15px;
+      padding: 0;
+    }
+    .btn-2 h5 {
+      margin: 12px 0;
+    }
+    .close {
+        float: right;
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 1.5;
+        color: #999;
+        padding-right: 10px;
+        text-shadow: 0 1px 0 #fff;
+    }
+}

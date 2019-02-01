@@ -1,0 +1,67 @@
+page-login-register {
+    .forgot {
+        text-align: right;
+        margin: 4px 0;
+    }
+    .button-block {
+        contain: none;
+        padding: 10px 0;
+        margin: 15px 0;
+        background: #ff7d01;
+        color: #fff;
+        border-radius: 15px;
+    }
+    .focus-outline button:focus, .focus-outline [ion-button]:focus {
+        border-color: #e79100;
+        outline: 2px solid #e79100;
+        -webkit-box-shadow: 0 0 8px 1px #e79100;
+        box-shadow: 0 0 8px 1px #e79100;
+    } 
+    .signupbutton {
+        margin-top: -10px;
+        text-decoration: underline;
+        color: #488aff;
+        background: none;
+    }
+    .list-ios {
+        margin-bottom: 15px;
+    }
+    ion-label[floating] {
+        color: #fff !important;
+    }
+    [col-6] {
+        *padding: 0px;
+    }
+    .list-ios .item-block .item-inner {
+        border-bottom: 1.25px solid #fff;
+    }
+    .list-ios > .item-block {
+        background: none;
+    }
+    .item-md {
+        background: transparent;
+    }
+    .list-ios > .item-block:first-child {
+        border-top: none;
+    }
+    .list-md .item-input:last-child {
+        border-bottom: none;
+    }
+    .text-input .input {
+        background: none;
+    }
+    .item-ios {
+        // background-color: none !important;
+         background-color: rgba(158, 158, 158, 0.1);
+    } 
+    .social-icon-facebook {
+        background-color: #3b5997;
+        padding: 0 18px;
+        border-radius: 15px;
+    }
+    .social-icon-google {
+        background-color: #f7575c;
+        padding: 0 30px;
+        border-radius: 15px;
+    }
+}
