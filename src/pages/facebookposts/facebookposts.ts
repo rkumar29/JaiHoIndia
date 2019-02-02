@@ -10,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-const TAG:string = "FacebookPostPage => "; 
+const TAG: string = "FacebookPostPage => ";
 
 @IonicPage()
 @Component({
@@ -19,24 +19,24 @@ const TAG:string = "FacebookPostPage => ";
 })
 export class FacebookpostsPage {
 
-  guruName:any;
-  facebookLink:any;
+  guruName: any;
+  facebookLink: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public util: Utils,public iab:InAppBrowser,private sanitize: DomSanitizer) {
+    public util: Utils, public iab: InAppBrowser, private sanitize: DomSanitizer) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FacebookpostsPage');
   }
 
-  ionViewWillEnter(){
-   this.guruName =  this.navParams.get('guru_name');
+  ionViewWillEnter() {
+    this.guruName = this.navParams.get('guru_name');
     this.facebookLink = this.navParams.get('fbLink');
-
-    this.util.debugLog(TAG,"guru"+this.guruName+" &"+this.facebookLink);
-    //this.iab.create(this.facebookLink);
-    this.facebookLink = this.sanitize.bypassSecurityTrustResourceUrl(this.facebookLink);
+    if (this.facebookLink != null) {
+      this.util.debugLog(TAG, "guru" + this.guruName + " &" + this.facebookLink);
+      this.facebookLink = this.sanitize.bypassSecurityTrustResourceUrl(this.facebookLink);
+    }
 
   }
 

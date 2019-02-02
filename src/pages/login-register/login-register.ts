@@ -139,12 +139,12 @@ export class LoginRegisterPage {
       let fname = name.substring(0, index);
       let lname = name.substring(index + 1);
 
-      let req = JSON.stringify({
+     /*  let req = JSON.stringify({
         action: "login",
         email: res.email,
         password: "",
         issocial: "1"
-      });
+      }); */
 
       let reqSignUp = {
         "action": "registration",
@@ -154,14 +154,15 @@ export class LoginRegisterPage {
         "password": "",
         "issocial": "1"
       }
+      this.signUpFacebook(reqSignUp);
 
-      this.storage.get(ItagStorage.islogin).then(val => {
+      /* this.storage.get(ItagStorage.islogin).then(val => {
         if (val === "1") {
           this.loginFacebook(req);
         } else if (val === "0") {
           this.signUpFacebook(reqSignUp);
         }
-      })
+      }) */
       
     }, err => {
       this.utils.showToast(err)
@@ -211,8 +212,9 @@ export class LoginRegisterPage {
         if (response.statuscode == 200 || response.statuscode == 201) {
           this.utils.showToast(response.message);
           this.signUpResponse = response.data;
-          this.storage.set(ItagStorage.user_id, this.signUpResponse.user_id);
-          this.navCtrl.setRoot(DashboardPage);
+          this.storage.set(ItagStorage.user_id, this.signUpResponse.user_id).then(()=>{
+            this.navCtrl.setRoot(DashboardPage);
+          }); 
         } else {
           this.utils.showToast(response.message);
         }

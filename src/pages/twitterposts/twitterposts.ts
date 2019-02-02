@@ -10,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
  * Ionic pages and navigation.
  */
 
-const TAG:string = "TwitterPostPage => "; 
+const TAG: string = "TwitterPostPage => ";
 
 @IonicPage()
 @Component({
@@ -19,22 +19,24 @@ const TAG:string = "TwitterPostPage => ";
 })
 export class TwitterpostsPage {
 
-  guruName:any;
-  twitterLink:any;
+  guruName: any;
+  twitterLink: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public util:Utils,private sanitize: DomSanitizer) {
+    public util: Utils, private sanitize: DomSanitizer) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TwitterpostsPage');
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.guruName = this.navParams.get('guru_name');
     this.twitterLink = this.navParams.get('twitterLink');
-    this.util.debugLog(TAG,"guru"+this.guruName+" &"+this.twitterLink);
-    this.twitterLink = this.sanitize.bypassSecurityTrustResourceUrl(this.twitterLink);
+    if (this.twitterLink != null) {
+      this.util.debugLog(TAG, "guru" + this.guruName + " &" + this.twitterLink);
+      this.twitterLink = this.sanitize.bypassSecurityTrustResourceUrl(this.twitterLink);
+    } 
 
   }
 

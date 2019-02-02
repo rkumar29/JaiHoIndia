@@ -39,7 +39,7 @@ export class ForgotPasswordPage {
 
   forgotPassword(){
     let reqBody = {
-      "action":"forgot_password",
+      "action":"forget_password",
       "email":this.email.value
     }
 

@@ -60,8 +60,8 @@ export class OtpPage {
     this.savedMobile = this.mobile.value;
 
     let reqBody = {
-      "action":"generateOtp",
-      "otp":this.savedMobile
+      "action":"getOTP",
+      "mobile":this.savedMobile
     }
    
     if(this.utils.checkNetWork()){
@@ -74,7 +74,8 @@ export class OtpPage {
           this.utils.showToast(res.message);
           this.startTimer();
         }else{
-          this.startTimer();
+         // this.startTimer();
+         this.utils.showToast("Please Enter Number Entered At Registration Time");
           this.utils.debugLog(TAG,JSON.stringify(res));
         }
 
@@ -94,6 +95,7 @@ export class OtpPage {
     this.clickSend = false;
     let reqBody = {
       "action":"verifyOtp",
+      "mobile":this.savedMobile,
       "otp":this.otp.value
     }
    
@@ -107,8 +109,9 @@ export class OtpPage {
           this.navCtrl.pop();
           clearInterval(this.timerId);
         }else{
-          clearInterval(this.timerId);
-          this.navCtrl.pop();
+         /*  clearInterval(this.timerId);
+          this.navCtrl.pop(); */
+          this.utils.showToast("Otp Didn't Match Please Enter Valid OTP");
           this.utils.debugLog(TAG,JSON.stringify(res));
         }
 
